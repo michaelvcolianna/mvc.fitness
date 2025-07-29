@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
@@ -63,5 +63,37 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    /**
+     * Get the user's exercises.
+     */
+    public function exercises(): HasMany
+    {
+        return $this->hasMany(Exercise::class);
+    }
+
+    /**
+     * Get the user's groupings.
+     */
+    public function groupings(): HasMany
+    {
+        return $this->hasMany(Grouping::class);
+    }
+
+    /**
+     * Get the user's sets.
+     */
+    public function sets(): HasMany
+    {
+        return $this->hasMany(Set::class);
+    }
+
+    /**
+     * Get the user's workouts.
+     */
+    public function workouts(): HasMany
+    {
+        return $this->hasMany(Workout::class);
     }
 }
