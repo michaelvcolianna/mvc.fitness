@@ -8,6 +8,9 @@ enum Routes
 {
     case dashboard;
     case exercises;
+    case groupings;
+    case stats;
+    case workout;
 
     public function name(): string
     {
