@@ -29,6 +29,12 @@
                 <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
+            <div class="mt-4">
+                <x-label for="registration_key" value="{{ __('Registration Key') }}" />
+                <x-input id="registration_key" class="block mt-1 w-full" type="text" name="registration_key" required autocomplete="one-time-code" />
+                <div class="my-2 text-gray-600 text-xs leading-normal">Public registration is closed. Please provide the registration key given to you by MVC.</div>
+            </div>
+
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">
                     <x-label for="terms">
