@@ -10,7 +10,15 @@ enum Routes
     case exercises;
     case groupings;
     case stats;
-    case workout;
+    case workouts;
+
+    public function inNav(): bool
+    {
+        return match($this) {
+            Routes::dashboard, Routes::exercises, Routes::groupings, Routes::workouts => true,
+            Routes::stats => false
+        };
+    }
 
     public function name(): string
     {

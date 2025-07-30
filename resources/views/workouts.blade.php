@@ -1,11 +1,15 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Workouts') }}
         </h2>
     </x-slot>
 
     <x-layout.wrapper>
-        <x-welcome />
+        <x-layout.section>
+            <x-paragraph.relaxed>
+                workouts page
+            </x-paragraph.relaxed>
+        </x-layout.section>
     </x-layout.wrapper>
 </x-app-layout>

@@ -14,7 +14,7 @@
             </svg>
 
             <h2 class="ms-3 text-xl font-semibold text-gray-900">
-                <a href="{{ route('workout') }}">Start Workout</a>
+                <a href="{{ route('workouts') }}">Start Workout</a>
             </h2>
         </div>
 
@@ -23,7 +23,7 @@
         </p>
 
         <p class="mt-4 text-sm">
-            <a href="{{ route('workout') }}" class="inline-flex items-center font-semibold text-sky-700">
+            <a href="{{ route('workouts') }}" class="inline-flex items-center font-semibold text-sky-700">
                 Go
 
                 <x-icons.right-arrow class="ms-1 size-5 fill-sky-500" />
