@@ -2,16 +2,10 @@
 
 <x-modal :id="$id" :maxWidth="$maxWidth" {{ $attributes }}>
     <div class="px-6 py-4">
-        <div class="text-lg font-medium text-gray-900">
-            {{ $title }}
-        </div>
+        <x-heading.h3>{{ $title }}</x-heading.h3>
 
-        <div class="mt-4 text-sm text-gray-600">
-            {{ $content }}
-        </div>
+        <x-layout.content>{{ $content }}</x-layout.content>
     </div>
 
-    <div class="flex flex-row justify-end px-6 py-4 bg-gray-100 text-end">
-        {{ $footer }}
-    </div>
+    <x-layout.footer>{{ $footer }}</x-layout.footer>
 </x-modal>

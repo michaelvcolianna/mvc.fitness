@@ -1,43 +1,40 @@
 <x-guest-layout>
     <x-authentication-card>
-        <x-slot name="logo">
+        <x-slot:logo>
             <x-authentication-card-logo />
-        </x-slot>
+        </x-slot:logo>
 
-        <div class="mb-4 text-sm text-gray-600">
-            Before continuing, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.
-        </div>
+        <x-auth.note
+            >Before continuing, could you verify your email address by clicking
+            on the link we just emailed to you? If you didn't receive the email,
+            we will gladly send you another.</x-auth.note>
 
         @if (session('status') == 'verification-link-sent')
-            <div class="mb-4 font-medium text-sm text-green-600">
-                A new verification link has been sent to the email address you provided in your profile settings.
-            </div>
+            <x-auth.status
+                >A new verification link has been sent to the email address you
+                provided in your profile settings.</x-auth.status>
         @endif
 
         <div class="mt-4 flex items-center justify-between">
-            <form method="POST" action="{{ route('verification.send') }}">
-                @csrf
-
+            <x-auth.form method="POST" :action="route('verification.send')">
                 <div>
-                    <x-button type="submit">
-                        Resend Verification Email
-                    </x-button>
+                    <x-button type="submit">Resend Verification Email</x-button>
                 </div>
-            </form>
+            </x-auth.form>
 
             <div>
-                <a
-                    href="{{ route('profile.show') }}"
-                    class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500"
-                >
-                    Edit Profile</a>
+                <x-auth.link :href="route('profile.show')"
+                    >Edit Profile</x-auth.link>
 
-                <form method="POST" action="{{ route('logout') }}" class="inline">
-                    @csrf
-
-                    <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 ms-2">
-                        Log Out
-                    </button>
+                <div class="inline">
+                    <x-auth.form method="POST" :action="route('logout')">
+                        <button
+                            type="submit"
+                            class="underline text-sm text-gray-600
+                            hover:text-gray-900 rounded-md focus:outline-none
+                            focus:ring-2 focus:ring-offset-2
+                            focus:ring-sky-500 ms-2"
+                            >Log Out</button>
                 </form>
             </div>
         </div>

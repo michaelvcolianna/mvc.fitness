@@ -1,13 +1,9 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Dashboard
-        </h2>
-    </x-slot>
+    <x-slot:header>
+        <x-heading.h2>Dashboard</x-heading.h2>
+    </x-slot:header>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <x-welcome />
-        </div>
-    </div>
+    <x-layout.wrapper :asGrid="false">
+        <x-welcome />
+    </x-layout.wrapper>
 </x-app-layout>

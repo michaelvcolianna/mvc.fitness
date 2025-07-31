@@ -1,9 +1,7 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Grouping Presets
-        </h2>
-    </x-slot>
+    <x-slo:header>
+        <x-heading.h2>Grouping Presets</x-heading.h2>
+    </x-slot:header>
 
     <x-layout.wrapper>
         <x-layout.section>

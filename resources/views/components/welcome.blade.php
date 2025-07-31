@@ -1,56 +1,33 @@
 <x-layout.section>
     <x-application-logo class="hidden sm:block h-12 w-auto" />
 
-    <h1 class="sm:mt-8 text-2xl font-medium text-gray-900">
-        mvc.fitness
-    </h1>
+    <x-heading.h1>mvc.fitness</x-heading.h1>
 </x-layout.section>
 
-<div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 p-6 lg:p-8">
-    <div>
-        <div class="flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 640 640" class="size-6 fill-sky-500">
-                <path d="M320 171.9L305 151.1C280 116.5 239.9 96 197.1 96C123.6 96 64 155.6 64 229.1L64 231.7C64 255.3 70.2 279.7 80.6 304L186.6 304C189.8 304 192.7 302.1 194 299.1L225.8 222.8C229.5 214 238.1 208.2 247.6 208C257.1 207.8 265.9 213.4 269.8 222.1L321.1 336L362.5 253.2C366.6 245.1 374.9 239.9 384 239.9C393.1 239.9 401.4 245 405.5 253.2L428.7 299.5C430.1 302.2 432.8 303.9 435.9 303.9L559.5 303.9C570 279.6 576.1 255.2 576.1 231.6L576.1 229C576 155.6 516.4 96 442.9 96C400.2 96 360 116.5 335 151.1L320 171.8zM533.6 352L435.8 352C414.6 352 395.2 340 385.7 321L384 317.6L341.5 402.7C337.4 411 328.8 416.2 319.5 416C310.2 415.8 301.9 410.3 298.1 401.9L248.8 292.4L238.3 317.6C229.6 338.5 209.2 352.1 186.6 352.1L106.4 352.1C153.6 425.9 229.4 493.8 276.8 530C289.2 539.4 304.4 544.1 319.9 544.1C335.4 544.1 350.7 539.5 363 530C410.6 493.7 486.4 425.8 533.6 352z"/>
+<x-layout.highlight>
+    <x-welcome.card :href="route('workouts')" label="Start Workout">
+        <x-slot:icon>
+            <svg xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 640 640"
+                class="size-6 fill-sky-500">
+                <path d="M320 171.9L305 151.1C280 116.5 239.9 96 197.1 96C123.6 96 64 155.6 64 229.1L64 231.7C64 255.3 70.2 279.7 80.6 304L186.6 304C189.8 304 192.7 302.1 194 299.1L225.8 222.8C229.5 214 238.1 208.2 247.6 208C257.1 207.8 265.9 213.4 269.8 222.1L321.1 336L362.5 253.2C366.6 245.1 374.9 239.9 384 239.9C393.1 239.9 401.4 245 405.5 253.2L428.7 299.5C430.1 302.2 432.8 303.9 435.9 303.9L559.5 303.9C570 279.6 576.1 255.2 576.1 231.6L576.1 229C576 155.6 516.4 96 442.9 96C400.2 96 360 116.5 335 151.1L320 171.8zM533.6 352L435.8 352C414.6 352 395.2 340 385.7 321L384 317.6L341.5 402.7C337.4 411 328.8 416.2 319.5 416C310.2 415.8 301.9 410.3 298.1 401.9L248.8 292.4L238.3 317.6C229.6 338.5 209.2 352.1 186.6 352.1L106.4 352.1C153.6 425.9 229.4 493.8 276.8 530C289.2 539.4 304.4 544.1 319.9 544.1C335.4 544.1 350.7 539.5 363 530C410.6 493.7 486.4 425.8 533.6 352z" />
             </svg>
+        </x-slot:icon>
 
-            <h2 class="ms-3 text-xl font-semibold text-gray-900">
-                <a href="{{ route('workouts') }}">Start Workout</a>
-            </h2>
-        </div>
+        Start logging a new workout.
+    </x-welcome.card>
 
-        <p class="mt-4 text-gray-500 text-sm leading-relaxed">
-            Start logging a new workout.
-        </p>
-
-        <p class="mt-4 text-sm">
-            <a href="{{ route('workouts') }}" class="inline-flex items-center font-semibold text-sky-700">
-                Go
-
-                <x-icons.right-arrow class="ms-1 size-5 fill-sky-500" />
-            </a>
-        </p>
-    </div>
-
-    <div>
-        <div class="flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 640 640" class="size-6 fill-sky-500">
-                <path d="M96 96C113.7 96 128 110.3 128 128L128 464C128 472.8 135.2 480 144 480L544 480C561.7 480 576 494.3 576 512C576 529.7 561.7 544 544 544L144 544C99.8 544 64 508.2 64 464L64 128C64 110.3 78.3 96 96 96zM208 288C225.7 288 240 302.3 240 320L240 384C240 401.7 225.7 416 208 416C190.3 416 176 401.7 176 384L176 320C176 302.3 190.3 288 208 288zM352 224L352 384C352 401.7 337.7 416 320 416C302.3 416 288 401.7 288 384L288 224C288 206.3 302.3 192 320 192C337.7 192 352 206.3 352 224zM432 256C449.7 256 464 270.3 464 288L464 384C464 401.7 449.7 416 432 416C414.3 416 400 401.7 400 384L400 288C400 270.3 414.3 256 432 256zM576 160L576 384C576 401.7 561.7 416 544 416C526.3 416 512 401.7 512 384L512 160C512 142.3 526.3 128 544 128C561.7 128 576 142.3 576 160z"/>
+    <x-welcome.card :href="route('stats')" label="Stats">
+        <x-slot:icon>
+            <svg xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 640 640"
+                class="size-6 fill-sky-500">
+                <path d="M96 96C113.7 96 128 110.3 128 128L128 464C128 472.8 135.2 480 144 480L544 480C561.7 480 576 494.3 576 512C576 529.7 561.7 544 544 544L144 544C99.8 544 64 508.2 64 464L64 128C64 110.3 78.3 96 96 96zM208 288C225.7 288 240 302.3 240 320L240 384C240 401.7 225.7 416 208 416C190.3 416 176 401.7 176 384L176 320C176 302.3 190.3 288 208 288zM352 224L352 384C352 401.7 337.7 416 320 416C302.3 416 288 401.7 288 384L288 224C288 206.3 302.3 192 320 192C337.7 192 352 206.3 352 224zM432 256C449.7 256 464 270.3 464 288L464 384C464 401.7 449.7 416 432 416C414.3 416 400 401.7 400 384L400 288C400 270.3 414.3 256 432 256zM576 160L576 384C576 401.7 561.7 416 544 416C526.3 416 512 401.7 512 384L512 160C512 142.3 526.3 128 544 128C561.7 128 576 142.3 576 160z" />
             </svg>
-            <h2 class="ms-3 text-xl font-semibold text-gray-900">
-                <a href="{{ route('stats') }}">Stats</a>
-            </h2>
-        </div>
+        </x-slot:icon>
 
-        <p class="mt-4 text-gray-500 text-sm leading-relaxed">
-            View overall workout statistics.
-        </p>
-
-        <p class="mt-4 text-sm">
-            <a href="{{ route('stats') }}" class="inline-flex items-center font-semibold text-sky-700">
-                Go
-
-                <x-icons.right-arrow class="ms-1 size-5 fill-sky-500" />
-            </a>
-        </p>
-    </div>
-</div>
+        View overall workout statistics.
+    </x-welcome.card>
+</x-layout.highlight>
